@@ -43,8 +43,8 @@ if [ "$EUID" -ne 0 ]; then
     echo "[ERROR]: Please run as root" && exit;
 fi
 
-#echo "[INFO]: Checking connect to internet."
-#ping 9.9.9.9 -c 6 &> /dev/null || echo "[ERROR]: Have you internet conetion?" && exit;
+echo "[INFO]: Checking connect to internet."
+ping 9.9.9.9 -c 6 &> /dev/null || echo "[ERROR]: Have you internet conetion?" && exit;
 
 ls /tmp/upgrade.lock &> /dev/null && echo "[WARRNING]: Another instance this scrypt is active!" && exit;
 
